@@ -1,0 +1,32 @@
+body{
+    background-color: #00203b;
+}
+.image{
+    width: 50%;
+    display: block;
+    margin: auto; 
+    margin-bottom: 3%;   
+}
+.bottom_line{
+    display: flex;
+    justify-content: space-around;
+}
+.caption{
+    color: white;
+    margin-right: -9em;   
+}
+.control{
+    display: grid;
+    gap: 1em;
+}
+.circle{
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background-color:#0000FF;
+    cursor: pointer;
+}
+.circle:hover{
+    background-color: white;
+    transition: 1s;
+}
