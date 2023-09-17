@@ -1,32 +1,160 @@
 body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background-color: #00203b;
 }
-.image{
-    width: 50%;
-    display: block;
-    margin: auto; 
-    margin-bottom: 3%;   
-}
-.bottom_line{
-    display: flex;
-    justify-content: space-around;
-}
-.caption{
-    color: white;
-    margin-right: -9em;   
-}
-.control{
+.contener{
+    margin-top: 2%;
     display: grid;
-    gap: 1em;
+    gap: 4em;
+    grid-template-areas:
+    "A A"
+    "B C";
 }
-.circle{
-    height: 1em;
-    width: 1em;
+.images{
+    display: block;
+    grid-area: A;
+    margin: auto;
+    width: 50em;
+    height: 30em;
+    overflow: hidden;
+}
+.image_first{
+    height: inherit;
+    background: url(./img/i_am_best.jpg) no-repeat center;
+    background-size: cover;
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+.image_second{
+    height: inherit;
+    background: url(./img/of_the_best.jpg) no-repeat center;
+    background-size: cover;
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+.image_third{
+    height: inherit;
+    background: url(./img/keepgoing.jpg) no-repeat center;
+    background-size: cover;
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+    opacity: 0;
+    z-index: 0;
+}
+.image_fourth{
+    height: inherit;
+    background: url(./img/do_not_stop.jpg) no-repeat center;
+    background-size: cover;
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+.texts{
+    display: block;
+    grid-area: B;
+    height: 1.3em;
+    color: aliceblue;
+    font-size: 2em;
+    margin-left: 39%;
+    overflow: hidden;
+}
+.text_first, .text_second, .text_third, .text_fourth{
+    transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+input{
+    grid-area: C;
+}
+label{
+    border: 0.08em solid #185ae0;
+    background: #185ae0;
     border-radius: 50%;
-    background-color:#0000FF;
+    width: 1em; 
+    height: 1em; 
+}
+label:hover{
     cursor: pointer;
+    background: aliceblue;
+    border: 0.10em solid aliceblue;
 }
-.circle:hover{
-    background-color: white;
-    transition: 1s;
+#first:checked ~  label:nth-of-type(1),
+#second:checked ~ label:nth-of-type(2),
+#third:checked ~ label:nth-of-type(3),
+#fourth:checked ~ label:nth-of-type(4){
+    cursor: pointer;
+    background: #00203b;
+    border: 0.10em solid #185ae0;
 }
+#second:checked ~ .images > .image_first,
+#third:checked ~ .images > .image_first,
+#fourth:checked ~ .images > .image_first,
+#second:checked ~ .texts > .text_first,
+#third:checked ~ .texts > .text_first,
+#fourth:checked ~ .texts > .text_first{
+    transform: translateY(100%);
+}
+#second:checked ~ .images > .image_second,
+#second:checked ~ .texts > .text_second{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(-100%);
+}
+#third:checked ~ .images > .image_third,
+#third:checked ~ .texts > .text_third{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(-200%);
+}
+#fourth:checked ~ .images > .image_fourth,
+#fourth:checked ~ .texts > .text_fourth{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(-300%);
+}
+input{
+    appearance: none;
+}
+
+@media screen and (max-width: 380px) {
+    body{
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden ;
+    }
+    .contener{
+        margin-top: 10%;
+        display: grid;
+        gap: 2em;
+        grid-template-areas:
+        "A"
+        "C"
+        "B";       
+    }
+    .images{
+        display: block;
+        width: 22em;
+        height: 13em;      
+        overflow: hidden;
+        grid-area: A;
+        margin: 0;
+        padding-left: 3%;
+   }
+    .image_first, .image_second, .image_third, .image_fourth{
+        width: 100%;
+    }
+    .texts{
+        font-size: 1.3em;
+        margin-left: 7%;
+        grid-area: B;
+    }
+    input{        
+        grid-area: C;      
+    }
+    label{
+        border: 0.08em solid #185ae0;
+        background: #185ae0;
+        border-radius: 50%;
+        grid-area: C;
+    }
+}
+
+
+
+
+
