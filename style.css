@@ -58,8 +58,13 @@ body{
 .text_first, .text_second, .text_third, .text_fourth{
     transition: transform ease-in-out 1s, opacity ease-in-out 1s;
 }
+#first{
+    
+}
 input{
     grid-area: C;
+    width: 1em;
+    height: 1em;
 }
 label{
     border: 0.08em solid #185ae0;
@@ -67,6 +72,7 @@ label{
     border-radius: 50%;
     width: 1em; 
     height: 1em; 
+    grid-area: C;
 }
 label:hover{
     cursor: pointer;
@@ -143,8 +149,10 @@ input{
         margin-left: 7%;
         grid-area: B;
     }
+    label{        
+    }
     input{        
-        grid-area: C;      
+        grid-area: C;
     }
     label{
         border: 0.08em solid #185ae0;
