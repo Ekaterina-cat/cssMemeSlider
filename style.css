@@ -49,7 +49,7 @@ body{
 .texts{
     display: block;
     grid-area: B;
-    height: 1.3em;
+    height: 1.2em;
     color: aliceblue;
     font-size: 2em;
     margin-left: 21%;
@@ -121,9 +121,7 @@ input{
 
 @media screen and (max-width: 500px) {
     body{
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden ;
+        margin: 0;
     }
     .contener{
         margin-top: 10%;
@@ -132,24 +130,24 @@ input{
         grid-template-areas:
         "A"
         "C"
-        "B";       
+        "B";
     }
     .images{
         display: block;
-        width: 19em;
-        height: 11em;      
+        width: 21em;
+        height: 13em;      
         overflow: hidden;
         grid-area: A;
-        margin: 0;
-        padding-left: 3%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .image_first, .image_second, .image_third, .image_fourth{
         width: 100%;
     }
     .texts{
         font-size: 1.3em;
-        margin-left: 5%;
         grid-area: B;
+        margin-left: 17%;
     }    
     label{
         border: 0.08em solid #185ae0;
@@ -157,10 +155,6 @@ input{
         border-radius: 50%;
         grid-area: C;
     }
-    .first{margin-left: 8em;}
-    .second{margin-left: 10em;}
-    .third{margin-left: 12em;}
-    .fourth{margin-left: 14em;}
 }
 
 
