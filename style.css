@@ -1,0 +1,179 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #2F4F4F;
+}
+.content-block{
+  width: 88%;
+  margin: 1% auto;
+  display: grid;
+  gap: 3em;
+  grid-template-areas:
+    "A A"
+    "B C";
+  justify-content: space-between;
+}
+.content-block_image{
+  grid-area: A;
+  height: 38em;
+  width: 100%;
+  overflow: hidden;
+}
+.image-first{
+  background-image: url(../cssMemeSlider/img/meme-first.jpg);
+}
+.image-second{
+  background-image: url(../cssMemeSlider/img/meme-second.jpg);
+  opacity: 0;
+  z-index: 0;
+}
+.image-third{
+  background-image: url(../cssMemeSlider/img/meme-third.jpg);
+}
+.image-fourth{
+  background-image: url(../cssMemeSlider/img/meme-fourth.jpg);
+}
+.image-first, .image-second,
+.image-third, .image-fourth{
+  height: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+.content-block_caption{
+  grid-area: B;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 2em;
+}
+input{
+  width: 1em;
+  height: 1em;
+  appearance: none;
+  grid-area: C;
+}
+.first{margin-left: 8em;}
+.second{margin-left: 12em;}
+.third{margin-left: 16em;}
+.fourth{margin-left: 20em;}
+label{
+  border: 0.08em solid #185ae0;
+  background: #185ae0;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  grid-area: C;
+}
+label:hover{
+  cursor: pointer;
+  background: aliceblue;
+  border: 0.10em solid aliceblue;
+}
+.block-caption{
+  font: 900 2em/1.1 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: antiquewhite;
+  overflow: hidden;
+  height: 1.2em;
+  display: block;
+}
+.caption-first, .caption-second,
+.caption-third, .caption-fourth{
+  transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
+#first:checked ~ label:nth-of-type(1),
+#second:checked ~ label:nth-of-type(2),
+#third:checked ~ label:nth-of-type(3),
+#fourth:checked ~ label:nth-of-type(4){
+  cursor: pointer;
+  background: #00203b;
+  border: 0.10em solid #185ae0;
+}
+#second:checked ~ .content-block_image > .image-first,
+#third:checked ~ .content-block_image > .image-first,
+#fourth:checked ~ .content-block_image > .image-first,
+#second:checked ~ .block-caption > .caption-first,
+#third:checked ~ .block-caption > .caption-first,
+#fourth:checked ~ .block-caption > .caption-first{
+  transform: translateY(100%);
+}
+#second:checked ~ .content-block_image > .image-second,
+#second:checked ~ .block-caption > .caption-second{
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(-100%);
+}
+#third:checked ~ .content-block_image > .image-third,
+#third:checked ~ .block-caption > .caption-third{
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(-200%);
+}
+#fourth:checked ~ .content-block_image > .image-fourth,
+#fourth:checked ~ .block-caption > .caption-fourth{
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(-300%);
+}
+
+@media screen and (max-width: 1230px){
+  .content-block_image{
+    height: 30em;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .content-block{
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+      "A"
+      "C"
+      "B";
+      justify-content: stretch;
+  }
+  .content-block_image{
+    width: 100%;
+    height: 25em;
+  }
+  .first{margin-left: 20%;}
+  .second{margin-left: 40%;}
+  .third{margin-left: 60%;}
+  .fourth{margin-left: 80%;}
+  .block-caption{
+    font-size: 1.9em;
+  }
+}
+@media screen and (max-width: 810px){
+  .content-block_image{
+    height: 20em;
+  }
+}
+@media screen and (max-width: 640px){
+  .content-block_image{
+    height: 15em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-block_image{
+    height: 13em;
+  }
+  .first{margin-left: 20%;}
+  .second{margin-left: 40%;}
+  .third{margin-left: 60%;}
+  .fourth{margin-left: 80%;}
+  .block-caption{
+    font-size: 1em;
+  }  
+}
+@media screen and (max-width: 405px){
+  .content-block_image{
+    height: 10em;
+  }
+}
+@media screen and (max-width: 330px) {
+  .first{margin-left: 20%;}
+  .second{margin-left: 38%;}
+  .third{margin-left: 55%;}
+  .fourth{margin-left: 70%;}
+}
