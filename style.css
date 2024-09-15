@@ -72,7 +72,7 @@ label:hover{
   border: 0.10em solid aliceblue;
 }
 .block-caption{
-  font: 900 35px/1.1 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font: 900 2em/1.1 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: antiquewhite;
   overflow: hidden;
   height: 1.2em;
@@ -115,4 +115,65 @@ label:hover{
   opacity: 1;
   z-index: 1;
   transform: translateY(-300%);
+}
+
+@media screen and (max-width: 1230px){
+  .content-block_image{
+    height: 30em;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .content-block{
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+      "A"
+      "C"
+      "B";
+      justify-content: stretch;
+  }
+  .content-block_image{
+    width: 100%;
+    height: 25em;
+  }
+  .first{margin-left: 20%;}
+  .second{margin-left: 40%;}
+  .third{margin-left: 60%;}
+  .fourth{margin-left: 80%;}
+  .block-caption{
+    font-size: 1.9em;
+  }
+}
+@media screen and (max-width: 810px){
+  .content-block_image{
+    height: 20em;
+  }
+}
+@media screen and (max-width: 640px){
+  .content-block_image{
+    height: 15em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-block_image{
+    height: 13em;
+  }
+  .first{margin-left: 20%;}
+  .second{margin-left: 40%;}
+  .third{margin-left: 60%;}
+  .fourth{margin-left: 80%;}
+  .block-caption{
+    font-size: 1em;
+  }  
+}
+@media screen and (max-width: 405px){
+  .content-block_image{
+    height: 10em;
+  }
+}
+@media screen and (max-width: 330px) {
+  .first{margin-left: 20%;}
+  .second{margin-left: 38%;}
+  .third{margin-left: 55%;}
+  .fourth{margin-left: 70%;}
 }
