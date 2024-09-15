@@ -6,20 +6,16 @@ body{
 }
 .content-block{
   width: 90%;
-  height: 700px;
   margin: 1% auto;
   display: flex;
   flex-direction: column;
-  gap: 10%;
+  gap: 20%;
 }
 .content-block_image{
-  height: 600px;
+  height: 650px;
 }
 .image-first{
-  height: 100%;
   background-image: url(../cssMemeSlider/img/meme-first.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .image-second{
   background-image: url(../cssMemeSlider/img/meme-second.jpg);
@@ -30,6 +26,13 @@ body{
 .image-fourth{
   background-image: url(../cssMemeSlider/img/meme-fourth.jpg);
 }
+.image-first, .image-second,
+.image-third, .image-fourth{
+  height: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform ease-in-out 1s, opacity ease-in-out 1s;
+}
 .content-block_caption{
   display: flex;
   flex-direction: row-reverse;
@@ -38,7 +41,7 @@ body{
 }
 .block-control{
   display: flex;
-  align-items: center;
+  align-self: end;
   gap: 3%;
 }
 input{
@@ -62,6 +65,10 @@ label:hover{
   font: 900 35px/1.1 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: antiquewhite;
   overflow: hidden;
+}
+.caption-first, .caption-second,
+.caption-third, .caption-fourth{
+  transition: transform ease-in-out 1s, opacity ease-in-out 1s;
 }
 #first:checked ~  label:nth-of-type(1),
 #second:checked ~ label:nth-of-type(2),
